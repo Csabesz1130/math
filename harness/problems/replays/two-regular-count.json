@@ -1,0 +1,8 @@
+{
+  "note": "Hand-written scripted responses for offline demonstration of the harness. Not output of any model.",
+  "responses": [
+    "Each 2-regular graph on 6 vertices is a hexagon or two disjoint triangles: 60 + 10.\n\nANSWER: 70",
+    "Counting hexagons: 6!/(2*6) = 60.\n\nANSWER: 60",
+    "Cycle covers with all cycles of length at least 3: 5!/2 = 60 hexagons plus C(6,3)/2 = 10 pairs of triangles.\n\nANSWER: 70"
+  ]
+}

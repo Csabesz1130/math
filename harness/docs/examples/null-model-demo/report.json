@@ -1,0 +1,305 @@
+{
+  "app": "null-model",
+  "title": "Degree-preserving null-model test",
+  "headline": [
+    "300 nodes, 753 edges; 200 degree-preserving null samples (edge chain)",
+    "Triangles: 114 observed vs 60.3 \u00b1 7.9 expected (z = 6.769)",
+    "Most over-clustered nodes: acct215 (z=17.05), acct011 (z=14.44), acct275 (z=12.29), acct145 (z=10.56), acct276 (z=10.08)",
+    "Demo check: 10 of the top 10 flagged nodes belong to the planted ring of 12"
+  ],
+  "outputs": {
+    "nodes": 300,
+    "edges": 753,
+    "dropped": {
+      "self_loops": 0,
+      "duplicate_edges": 0
+    },
+    "samples": 200,
+    "statistics": {
+      "triangles": {
+        "observed": 114.0,
+        "null_mean": 60.33,
+        "null_sd": 7.928499,
+        "z": 6.769,
+        "p_upper": 0.00498,
+        "p_lower": 1.0,
+        "p_two_sided": 0.00995
+      },
+      "transitivity": {
+        "observed": 0.063474,
+        "null_mean": 0.033591,
+        "null_sd": 0.004415,
+        "z": 6.769,
+        "p_upper": 0.00498,
+        "p_lower": 1.0,
+        "p_two_sided": 0.00995
+      },
+      "assortativity": {
+        "observed": -0.012193,
+        "null_mean": -0.027794,
+        "null_sd": 0.033624,
+        "z": 0.464,
+        "p_upper": 0.32338,
+        "p_lower": 0.68159,
+        "p_two_sided": 0.64677
+      }
+    },
+    "sampler": {
+      "chain": "edge",
+      "chains": 4,
+      "burn_in_steps": 15060,
+      "thinning_steps": 753,
+      "acceptance_rate": 0.9153,
+      "rhat": {
+        "triangles": 1.0052,
+        "transitivity": 1.0052,
+        "assortativity": 1.0038
+      }
+    },
+    "top_excess_triangle_nodes": [
+      {
+        "node": "acct215",
+        "z": 17.05,
+        "triangles": 17,
+        "null_mean": 0.85
+      },
+      {
+        "node": "acct011",
+        "z": 14.44,
+        "triangles": 23,
+        "null_mean": 1.85
+      },
+      {
+        "node": "acct275",
+        "z": 12.29,
+        "triangles": 11,
+        "null_mean": 0.69
+      },
+      {
+        "node": "acct145",
+        "z": 10.56,
+        "triangles": 20,
+        "null_mean": 2.08
+      },
+      {
+        "node": "acct276",
+        "z": 10.08,
+        "triangles": 18,
+        "null_mean": 2.22
+      },
+      {
+        "node": "acct214",
+        "z": 9.77,
+        "triangles": 20,
+        "null_mean": 2.48
+      },
+      {
+        "node": "acct263",
+        "z": 8.44,
+        "triangles": 11,
+        "null_mean": 1.33
+      },
+      {
+        "node": "acct203",
+        "z": 8.38,
+        "triangles": 15,
+        "null_mean": 1.98
+      },
+      {
+        "node": "acct063",
+        "z": 7.57,
+        "triangles": 22,
+        "null_mean": 3.63
+      },
+      {
+        "node": "acct086",
+        "z": 7.14,
+        "triangles": 12,
+        "null_mean": 1.57
+      }
+    ],
+    "demo_check": {
+      "planted_ring": [
+        "acct276",
+        "acct063",
+        "acct259",
+        "acct048",
+        "acct086",
+        "acct011",
+        "acct263",
+        "acct145",
+        "acct203",
+        "acct214",
+        "acct275",
+        "acct215"
+      ],
+      "planted_in_top": 10,
+      "top": 10
+    }
+  },
+  "conclusions": [
+    {
+      "statement": "triangles is significantly above what the degree sequence explains (p = 0.00995)",
+      "tier": "empirical",
+      "weakest_support": [
+        "triangles: observed 114 vs null 60.33 \u00b1 7.93 (z = 6.769, two-sided p = 0.00995)",
+        "The edge chain's null samples are close to uniform over graphs with these degrees (Gelman\u2013Rubin R-hat across 4 chains: 1.005)"
+      ],
+      "support": [
+        {
+          "statement": "triangles: observed 114 vs null 60.33 \u00b1 7.93 (z = 6.769, two-sided p = 0.00995)",
+          "tier": "empirical",
+          "sources": [
+            {
+              "kind": "measurement",
+              "ref": "null-model",
+              "detail": "200 null samples"
+            }
+          ],
+          "limitations": [
+            "Monte Carlo p-value; resolution limited by the sample count"
+          ]
+        },
+        {
+          "statement": "The edge chain's null samples are close to uniform over graphs with these degrees (Gelman\u2013Rubin R-hat across 4 chains: 1.005)",
+          "tier": "empirical",
+          "sources": [
+            {
+              "kind": "measurement",
+              "ref": "null-model.rhat",
+              "detail": "{'triangles': 1.0052, 'transitivity': 1.0052, 'assortativity': 1.0038}"
+            }
+          ],
+          "limitations": [
+            "convergence diagnostics can miss slow mixing; they are not a guarantee",
+            "family 131's rate covers the lazy 4-set chain (--chain theorem), not this edge-swap chain"
+          ]
+        }
+      ]
+    },
+    {
+      "statement": "transitivity is significantly above what the degree sequence explains (p = 0.00995)",
+      "tier": "empirical",
+      "weakest_support": [
+        "transitivity: observed 0.06347 vs null 0.03359 \u00b1 0.00441 (z = 6.769, two-sided p = 0.00995)",
+        "The edge chain's null samples are close to uniform over graphs with these degrees (Gelman\u2013Rubin R-hat across 4 chains: 1.005)"
+      ],
+      "support": [
+        {
+          "statement": "transitivity: observed 0.06347 vs null 0.03359 \u00b1 0.00441 (z = 6.769, two-sided p = 0.00995)",
+          "tier": "empirical",
+          "sources": [
+            {
+              "kind": "measurement",
+              "ref": "null-model",
+              "detail": "200 null samples"
+            }
+          ],
+          "limitations": [
+            "Monte Carlo p-value; resolution limited by the sample count"
+          ]
+        },
+        {
+          "statement": "The edge chain's null samples are close to uniform over graphs with these degrees (Gelman\u2013Rubin R-hat across 4 chains: 1.005)",
+          "tier": "empirical",
+          "sources": [
+            {
+              "kind": "measurement",
+              "ref": "null-model.rhat",
+              "detail": "{'triangles': 1.0052, 'transitivity': 1.0052, 'assortativity': 1.0038}"
+            }
+          ],
+          "limitations": [
+            "convergence diagnostics can miss slow mixing; they are not a guarantee",
+            "family 131's rate covers the lazy 4-set chain (--chain theorem), not this edge-swap chain"
+          ]
+        }
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "statement": "Observed: 114 triangles, transitivity 0.0635, degree assortativity -0.0122 (300 nodes, 753 edges)",
+      "tier": "verified",
+      "sources": [
+        {
+          "kind": "check",
+          "ref": "null-model.measure"
+        }
+      ],
+      "data": {
+        "triangles": 114.0,
+        "transitivity": 0.063474,
+        "assortativity": -0.012193
+      }
+    },
+    {
+      "statement": "The double-edge swap chain has the uniform distribution on simple graphs with a given degree sequence as its stationary law",
+      "tier": "published",
+      "sources": [
+        {
+          "kind": "literature",
+          "ref": "Taylor (1981), connectivity of degree-sequence realisations; symmetric proposals"
+        }
+      ]
+    },
+    {
+      "statement": "The edge chain's null samples are close to uniform over graphs with these degrees (Gelman\u2013Rubin R-hat across 4 chains: 1.005)",
+      "tier": "empirical",
+      "sources": [
+        {
+          "kind": "measurement",
+          "ref": "null-model.rhat",
+          "detail": "{'triangles': 1.0052, 'transitivity': 1.0052, 'assortativity': 1.0038}"
+        }
+      ],
+      "limitations": [
+        "convergence diagnostics can miss slow mixing; they are not a guarantee",
+        "family 131's rate covers the lazy 4-set chain (--chain theorem), not this edge-swap chain"
+      ]
+    },
+    {
+      "statement": "triangles: observed 114 vs null 60.33 \u00b1 7.93 (z = 6.769, two-sided p = 0.00995)",
+      "tier": "empirical",
+      "sources": [
+        {
+          "kind": "measurement",
+          "ref": "null-model",
+          "detail": "200 null samples"
+        }
+      ],
+      "limitations": [
+        "Monte Carlo p-value; resolution limited by the sample count"
+      ]
+    },
+    {
+      "statement": "transitivity: observed 0.06347 vs null 0.03359 \u00b1 0.00441 (z = 6.769, two-sided p = 0.00995)",
+      "tier": "empirical",
+      "sources": [
+        {
+          "kind": "measurement",
+          "ref": "null-model",
+          "detail": "200 null samples"
+        }
+      ],
+      "limitations": [
+        "Monte Carlo p-value; resolution limited by the sample count"
+      ]
+    },
+    {
+      "statement": "assortativity: observed -0.01219 vs null -0.02779 \u00b1 0.0336 (z = 0.464, two-sided p = 0.64677)",
+      "tier": "empirical",
+      "sources": [
+        {
+          "kind": "measurement",
+          "ref": "null-model",
+          "detail": "200 null samples"
+        }
+      ],
+      "limitations": [
+        "Monte Carlo p-value; resolution limited by the sample count"
+      ]
+    }
+  ],
+  "files": []
+}

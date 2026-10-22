@@ -1,0 +1,329 @@
+{
+  "app": "pulse-code",
+  "title": "Low-sidelobe binary code, length 31",
+  "headline": [
+    "Length 31: PSL 3, ISL 67, merit factor 7.172",
+    "Code (+1 \u2192 1): 1010101101101100111001111110000"
+  ],
+  "outputs": {
+    "length": 31,
+    "objective": "psl",
+    "sequence": [
+      1,
+      -1,
+      1,
+      -1,
+      1,
+      -1,
+      1,
+      1,
+      -1,
+      1,
+      1,
+      -1,
+      1,
+      1,
+      -1,
+      -1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "bits": "1010101101101100111001111110000",
+    "psl": 3,
+    "isl": 67,
+    "merit_factor": 7.171642,
+    "autocorrelations": [
+      0,
+      -1,
+      0,
+      -1,
+      -2,
+      -1,
+      -2,
+      1,
+      2,
+      1,
+      -2,
+      1,
+      0,
+      3,
+      0,
+      3,
+      0,
+      -1,
+      2,
+      -3,
+      -2,
+      1,
+      -2,
+      1,
+      0,
+      1,
+      0,
+      -1,
+      0,
+      -1
+    ],
+    "search": {
+      "method": "tabu search (5s, seed 0)",
+      "psl1_exhaustive": {
+        "status": "none",
+        "nodes": 1539
+      },
+      "psl2_exhaustive": {
+        "status": "none",
+        "nodes": 161115
+      }
+    }
+  },
+  "conclusions": [
+    {
+      "statement": "This length-31 code has PSL 3 and merit factor 7.172",
+      "tier": "verified",
+      "weakest_support": [
+        "The code has PSL 3, ISL 67 and merit factor 7.172"
+      ],
+      "support": [
+        {
+          "statement": "The code has PSL 3, ISL 67 and merit factor 7.172",
+          "tier": "verified",
+          "sources": [
+            {
+              "kind": "check",
+              "ref": "pulse-codes.autocorrelations"
+            }
+          ],
+          "data": {
+            "autocorrelations": [
+              0,
+              -1,
+              0,
+              -1,
+              -2,
+              -1,
+              -2,
+              1,
+              2,
+              1,
+              -2,
+              1,
+              0,
+              3,
+              0,
+              3,
+              0,
+              -1,
+              2,
+              -3,
+              -2,
+              1,
+              -2,
+              1,
+              0,
+              1,
+              0,
+              -1,
+              0,
+              -1
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "statement": "No length-31 code has a lower PSL: this code is PSL-optimal",
+      "tier": "verified",
+      "weakest_support": [
+        "The code has PSL 3, ISL 67 and merit factor 7.172",
+        "Every length-31 sequence has PSL at least 3 (exhaustive search)"
+      ],
+      "support": [
+        {
+          "statement": "The code has PSL 3, ISL 67 and merit factor 7.172",
+          "tier": "verified",
+          "sources": [
+            {
+              "kind": "check",
+              "ref": "pulse-codes.autocorrelations"
+            }
+          ],
+          "data": {
+            "autocorrelations": [
+              0,
+              -1,
+              0,
+              -1,
+              -2,
+              -1,
+              -2,
+              1,
+              2,
+              1,
+              -2,
+              1,
+              0,
+              3,
+              0,
+              3,
+              0,
+              -1,
+              2,
+              -3,
+              -2,
+              1,
+              -2,
+              1,
+              0,
+              1,
+              0,
+              -1,
+              0,
+              -1
+            ]
+          }
+        },
+        {
+          "statement": "Every length-31 sequence has PSL at least 3 (exhaustive search)",
+          "tier": "verified",
+          "sources": [
+            {
+              "kind": "check",
+              "ref": "pulse-codes.exhaustive_psl"
+            }
+          ],
+          "data": {
+            "nodes": 161115
+          }
+        }
+      ]
+    },
+    {
+      "statement": "Searching for a length-31 Barker code is futile",
+      "tier": "verified",
+      "weakest_support": [
+        "No length-31 binary sequence has every sidelobe at most 1 (exhaustive search)"
+      ],
+      "support": [
+        {
+          "statement": "No length-31 binary sequence has every sidelobe at most 1 (exhaustive search)",
+          "tier": "verified",
+          "sources": [
+            {
+              "kind": "check",
+              "ref": "pulse-codes.exhaustive_psl"
+            }
+          ],
+          "data": {
+            "nodes": 1539
+          }
+        }
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "statement": "No length-31 binary sequence has every sidelobe at most 1 (exhaustive search)",
+      "tier": "verified",
+      "sources": [
+        {
+          "kind": "check",
+          "ref": "pulse-codes.exhaustive_psl"
+        }
+      ],
+      "data": {
+        "nodes": 1539
+      }
+    },
+    {
+      "statement": "The code has PSL 3, ISL 67 and merit factor 7.172",
+      "tier": "verified",
+      "sources": [
+        {
+          "kind": "check",
+          "ref": "pulse-codes.autocorrelations"
+        }
+      ],
+      "data": {
+        "autocorrelations": [
+          0,
+          -1,
+          0,
+          -1,
+          -2,
+          -1,
+          -2,
+          1,
+          2,
+          1,
+          -2,
+          1,
+          0,
+          3,
+          0,
+          3,
+          0,
+          -1,
+          2,
+          -3,
+          -2,
+          1,
+          -2,
+          1,
+          0,
+          1,
+          0,
+          -1,
+          0,
+          -1
+        ]
+      }
+    },
+    {
+      "statement": "Every length-31 sequence has PSL at least 3 (exhaustive search)",
+      "tier": "verified",
+      "sources": [
+        {
+          "kind": "check",
+          "ref": "pulse-codes.exhaustive_psl"
+        }
+      ],
+      "data": {
+        "nodes": 161115
+      }
+    },
+    {
+      "statement": "The largest merit factor at length N tends to infinity (Turyn's bounded-merit-factor conjecture is false)",
+      "tier": "formalized",
+      "sources": [
+        {
+          "kind": "family",
+          "ref": "076",
+          "detail": "Real ultraflat Littlewood polynomials and unbounded binary merit factors (Comparator: AsymptoticallyMinimalLittlewood, LittlewoodFiniteFlatness)"
+        },
+        {
+          "kind": "comparator",
+          "ref": "lean/ComparatorChallenges/AsymptoticallyMinimalLittlewood.json",
+          "detail": "OAI.AsymptoticallyMinimalLittlewood.main"
+        }
+      ],
+      "limitations": [
+        "asymptotic: gives no construction or rate at this length",
+        "formalization review status: unchecked; not re-checked in this run (`qed verify 076` runs Comparator where Lean is installed)"
+      ]
+    }
+  ],
+  "files": []
+}

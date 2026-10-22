@@ -1,0 +1,201 @@
+{
+  "app": "crossbar",
+  "title": "Crossing-optimal layout of K_{8,12}",
+  "headline": [
+    "K_{8,12}: 360 crossings, equal to the proven minimum Z(8, 12) = 360",
+    "8 sources on the x-axis, 12 sinks on the y-axis, straight edges"
+  ],
+  "outputs": {
+    "m": 8,
+    "n": 12,
+    "crossings": 360,
+    "lower_bound": 360,
+    "sources": [
+      [
+        -7910,
+        0
+      ],
+      [
+        -3446,
+        0
+      ],
+      [
+        -2122,
+        0
+      ],
+      [
+        -332,
+        0
+      ],
+      [
+        3156,
+        0
+      ],
+      [
+        6210,
+        0
+      ],
+      [
+        6918,
+        0
+      ],
+      [
+        7293,
+        0
+      ]
+    ],
+    "sinks": [
+      [
+        0,
+        -9559
+      ],
+      [
+        0,
+        -8269
+      ],
+      [
+        0,
+        -4618
+      ],
+      [
+        0,
+        -3579
+      ],
+      [
+        0,
+        -2290
+      ],
+      [
+        0,
+        -2282
+      ],
+      [
+        0,
+        4970
+      ],
+      [
+        0,
+        5867
+      ],
+      [
+        0,
+        6635
+      ],
+      [
+        0,
+        7809
+      ],
+      [
+        0,
+        7962
+      ],
+      [
+        0,
+        8377
+      ]
+    ],
+    "edges": "every source joined to every sink by a straight segment"
+  },
+  "conclusions": [
+    {
+      "statement": "This layout is crossing-optimal: 360 is the minimum number of jumpers for a single-layer K_{8,12}",
+      "tier": "formalized",
+      "weakest_support": [
+        "Every drawing of K_{8,12} with continuous edges has at least Z(8, 12) crossings"
+      ],
+      "support": [
+        {
+          "statement": "This straight-line drawing of K_{8,12} has exactly 360 crossings, at 360 distinct points (no three edges concurrent)",
+          "tier": "verified",
+          "sources": [
+            {
+              "kind": "check",
+              "ref": "crossbar.count_crossings (exact integer orientation tests)"
+            }
+          ],
+          "data": {
+            "crossing_pairs": 360,
+            "crossing_points": 360
+          }
+        },
+        {
+          "statement": "Z(8, 12) = 360",
+          "tier": "verified",
+          "sources": [
+            {
+              "kind": "check",
+              "ref": "crossbar.zarankiewicz"
+            }
+          ]
+        },
+        {
+          "statement": "Every drawing of K_{8,12} with continuous edges has at least Z(8, 12) crossings",
+          "tier": "formalized",
+          "sources": [
+            {
+              "kind": "family",
+              "ref": "165",
+              "detail": "The Harary\u2013Hill and Zarankiewicz crossing-number formulas (Comparator: CompleteCrossing, BipartiteCrossing)"
+            },
+            {
+              "kind": "comparator",
+              "ref": "lean/ComparatorChallenges/BipartiteCrossing.json",
+              "detail": "OAI.Zarankiewicz.mainTarget_proof"
+            }
+          ],
+          "limitations": [
+            "formalization review status: unchecked; not re-checked in this run (`qed verify 165` runs Comparator where Lean is installed)"
+          ]
+        }
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "statement": "This straight-line drawing of K_{8,12} has exactly 360 crossings, at 360 distinct points (no three edges concurrent)",
+      "tier": "verified",
+      "sources": [
+        {
+          "kind": "check",
+          "ref": "crossbar.count_crossings (exact integer orientation tests)"
+        }
+      ],
+      "data": {
+        "crossing_pairs": 360,
+        "crossing_points": 360
+      }
+    },
+    {
+      "statement": "Z(8, 12) = 360",
+      "tier": "verified",
+      "sources": [
+        {
+          "kind": "check",
+          "ref": "crossbar.zarankiewicz"
+        }
+      ]
+    },
+    {
+      "statement": "Every drawing of K_{8,12} with continuous edges has at least Z(8, 12) crossings",
+      "tier": "formalized",
+      "sources": [
+        {
+          "kind": "family",
+          "ref": "165",
+          "detail": "The Harary\u2013Hill and Zarankiewicz crossing-number formulas (Comparator: CompleteCrossing, BipartiteCrossing)"
+        },
+        {
+          "kind": "comparator",
+          "ref": "lean/ComparatorChallenges/BipartiteCrossing.json",
+          "detail": "OAI.Zarankiewicz.mainTarget_proof"
+        }
+      ],
+      "limitations": [
+        "formalization review status: unchecked; not re-checked in this run (`qed verify 165` runs Comparator where Lean is installed)"
+      ]
+    }
+  ],
+  "files": [
+    "crossbar-8x12.svg"
+  ]
+}

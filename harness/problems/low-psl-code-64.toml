@@ -1,0 +1,22 @@
+# An open-ended design problem in the AlphaEvolve / FunSearch style: the model may write a search
+# program (run only with --exec), the trusted checker scores what it returns, and the loop keeps
+# feeding back the best verified code so far.
+id = "low-psl-code-64"
+kind = "construct"
+optimize = true
+program_seconds = 120
+families = ["179", "076"]
+statement = """
+Design a binary sequence of length 64 (entries +1 or -1) with the smallest possible peak sidelobe
+level PSL = max_k |C_k|, where C_k = sum_j s_j s_{j+k} for k = 1, ..., 63. Among sequences with
+equal PSL, a smaller integrated sidelobe level sum_k C_k^2 is better.
+"""
+context = """
+The code is for radar pulse compression. Barker codes stop at length 13 (family 179), so PSL >= 2
+here. Exhaustive search is infeasible at length 64; stochastic local search with incremental
+autocorrelation updates is the usual approach.
+"""
+
+[checker]
+file = "checkers/sidelobes.py"
+settings = "LENGTH = 64"

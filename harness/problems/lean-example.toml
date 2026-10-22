@@ -1,0 +1,10 @@
+# A proof with a formal target: a model-written Lean proof is compiled (with --exec) against the
+# fixed statement in the collection's Lake project, and must use only the standard axioms.
+id = "sum-of-odds"
+kind = "prove"
+statement = "For every natural number n, the sum of the first n odd numbers is n^2."
+
+[lean]
+statement = "theorem qed_sum_odds (n : ℕ) : ∑ i ∈ Finset.range n, (2 * i + 1) = n ^ 2"
+theorem = "qed_sum_odds"
+imports = ["Mathlib"]

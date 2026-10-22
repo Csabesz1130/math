@@ -1,0 +1,428 @@
+{
+  "app": "pulse-code",
+  "title": "Low-sidelobe binary code, length 64",
+  "headline": [
+    "Length 64: PSL 4, ISL 444, merit factor 4.613",
+    "Code (+1 \u2192 1): 0111111101111110010010011000011011110010000101110010101000111010"
+  ],
+  "outputs": {
+    "length": 64,
+    "objective": "psl",
+    "sequence": [
+      -1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      1,
+      -1,
+      -1,
+      1,
+      -1,
+      -1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      -1,
+      1,
+      1,
+      -1,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      1,
+      -1,
+      -1,
+      -1,
+      -1,
+      1,
+      -1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      1,
+      -1,
+      1,
+      -1,
+      1,
+      -1,
+      -1,
+      -1,
+      1,
+      1,
+      1,
+      -1,
+      1,
+      -1
+    ],
+    "bits": "0111111101111110010010011000011011110010000101110010101000111010",
+    "psl": 4,
+    "isl": 444,
+    "merit_factor": 4.612613,
+    "autocorrelations": [
+      3,
+      2,
+      3,
+      2,
+      -3,
+      0,
+      -3,
+      2,
+      1,
+      0,
+      -3,
+      4,
+      1,
+      -4,
+      1,
+      -4,
+      -3,
+      -4,
+      -3,
+      0,
+      3,
+      2,
+      1,
+      -2,
+      -1,
+      4,
+      -1,
+      2,
+      3,
+      2,
+      -3,
+      -2,
+      -1,
+      -2,
+      -3,
+      2,
+      -3,
+      -4,
+      -3,
+      2,
+      3,
+      2,
+      -3,
+      -4,
+      3,
+      -4,
+      -1,
+      4,
+      3,
+      -4,
+      -1,
+      -4,
+      3,
+      -4,
+      3,
+      2,
+      3,
+      0,
+      -1,
+      -2,
+      1,
+      -2,
+      1
+    ],
+    "search": {
+      "method": "tabu search (20s, seed 0)",
+      "psl1_exhaustive": {
+        "status": "none",
+        "nodes": 178287
+      },
+      "psl3_exhaustive": {
+        "status": "timeout",
+        "nodes": 102400
+      }
+    }
+  },
+  "conclusions": [
+    {
+      "statement": "This length-64 code has PSL 4 and merit factor 4.613",
+      "tier": "verified",
+      "weakest_support": [
+        "The code has PSL 4, ISL 444 and merit factor 4.613"
+      ],
+      "support": [
+        {
+          "statement": "The code has PSL 4, ISL 444 and merit factor 4.613",
+          "tier": "verified",
+          "sources": [
+            {
+              "kind": "check",
+              "ref": "pulse-codes.autocorrelations"
+            }
+          ],
+          "data": {
+            "autocorrelations": [
+              3,
+              2,
+              3,
+              2,
+              -3,
+              0,
+              -3,
+              2,
+              1,
+              0,
+              -3,
+              4,
+              1,
+              -4,
+              1,
+              -4,
+              -3,
+              -4,
+              -3,
+              0,
+              3,
+              2,
+              1,
+              -2,
+              -1,
+              4,
+              -1,
+              2,
+              3,
+              2,
+              -3,
+              -2,
+              -1,
+              -2,
+              -3,
+              2,
+              -3,
+              -4,
+              -3,
+              2,
+              3,
+              2,
+              -3,
+              -4,
+              3,
+              -4,
+              -1,
+              4,
+              3,
+              -4,
+              -1,
+              -4,
+              3,
+              -4,
+              3,
+              2,
+              3,
+              0,
+              -1,
+              -2,
+              1,
+              -2,
+              1
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "statement": "This code may not be PSL-optimal: PSL 3 at length 64 is neither achieved nor excluded",
+      "tier": "unknown",
+      "weakest_support": [
+        "Whether a length-64 code with PSL 2\u20133 exists"
+      ],
+      "support": [
+        {
+          "statement": "Whether a length-64 code with PSL 2\u20133 exists",
+          "tier": "unknown",
+          "sources": [
+            {
+              "kind": "check",
+              "ref": "pulse-codes.exhaustive_psl",
+              "detail": "not settled within the budget"
+            }
+          ],
+          "limitations": [
+            "raise --exhaustive-seconds (or --seconds) to settle it"
+          ]
+        }
+      ]
+    },
+    {
+      "statement": "Searching for a length-64 Barker code is futile",
+      "tier": "verified",
+      "weakest_support": [
+        "No length-64 binary sequence has every sidelobe at most 1 (exhaustive search)"
+      ],
+      "support": [
+        {
+          "statement": "No length-64 binary sequence has every sidelobe at most 1 (exhaustive search)",
+          "tier": "verified",
+          "sources": [
+            {
+              "kind": "check",
+              "ref": "pulse-codes.exhaustive_psl"
+            }
+          ],
+          "data": {
+            "nodes": 178287
+          }
+        }
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "statement": "No length-64 binary sequence has every sidelobe at most 1 (exhaustive search)",
+      "tier": "verified",
+      "sources": [
+        {
+          "kind": "check",
+          "ref": "pulse-codes.exhaustive_psl"
+        }
+      ],
+      "data": {
+        "nodes": 178287
+      }
+    },
+    {
+      "statement": "The code has PSL 4, ISL 444 and merit factor 4.613",
+      "tier": "verified",
+      "sources": [
+        {
+          "kind": "check",
+          "ref": "pulse-codes.autocorrelations"
+        }
+      ],
+      "data": {
+        "autocorrelations": [
+          3,
+          2,
+          3,
+          2,
+          -3,
+          0,
+          -3,
+          2,
+          1,
+          0,
+          -3,
+          4,
+          1,
+          -4,
+          1,
+          -4,
+          -3,
+          -4,
+          -3,
+          0,
+          3,
+          2,
+          1,
+          -2,
+          -1,
+          4,
+          -1,
+          2,
+          3,
+          2,
+          -3,
+          -2,
+          -1,
+          -2,
+          -3,
+          2,
+          -3,
+          -4,
+          -3,
+          2,
+          3,
+          2,
+          -3,
+          -4,
+          3,
+          -4,
+          -1,
+          4,
+          3,
+          -4,
+          -1,
+          -4,
+          3,
+          -4,
+          3,
+          2,
+          3,
+          0,
+          -1,
+          -2,
+          1,
+          -2,
+          1
+        ]
+      }
+    },
+    {
+      "statement": "Every length-64 sequence has PSL at least 2",
+      "tier": "verified",
+      "sources": [
+        {
+          "kind": "check",
+          "ref": "pulse-codes.exhaustive_psl"
+        }
+      ]
+    },
+    {
+      "statement": "The largest merit factor at length N tends to infinity (Turyn's bounded-merit-factor conjecture is false)",
+      "tier": "formalized",
+      "sources": [
+        {
+          "kind": "family",
+          "ref": "076",
+          "detail": "Real ultraflat Littlewood polynomials and unbounded binary merit factors (Comparator: AsymptoticallyMinimalLittlewood, LittlewoodFiniteFlatness)"
+        },
+        {
+          "kind": "comparator",
+          "ref": "lean/ComparatorChallenges/AsymptoticallyMinimalLittlewood.json",
+          "detail": "OAI.AsymptoticallyMinimalLittlewood.main"
+        }
+      ],
+      "limitations": [
+        "asymptotic: gives no construction or rate at this length",
+        "formalization review status: unchecked; not re-checked in this run (`qed verify 076` runs Comparator where Lean is installed)"
+      ]
+    },
+    {
+      "statement": "Whether a length-64 code with PSL 2\u20133 exists",
+      "tier": "unknown",
+      "sources": [
+        {
+          "kind": "check",
+          "ref": "pulse-codes.exhaustive_psl",
+          "detail": "not settled within the budget"
+        }
+      ],
+      "limitations": [
+        "raise --exhaustive-seconds (or --seconds) to settle it"
+      ]
+    }
+  ],
+  "files": []
+}

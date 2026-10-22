@@ -1,0 +1,7 @@
+{
+  "note": "Hand-written scripted responses for offline demonstration of the harness. Not output of any model.",
+  "responses": [
+    "Extending the Barker-13 code with an alternating tail should keep sidelobes small.\n\n```json\n[1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1]\n```",
+    "Search over sequences fixed from both ends, pruning when a completed correlation exceeds 2, gives:\n\n```json\n[1, 1, 1, -1, -1, 1, 1, 1, -1, -1, -1, -1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, -1, -1, 1, -1, -1, 1]\n```"
+  ]
+}

@@ -1,0 +1,5 @@
+# A computation with a reference answer.
+id = "two-regular-graphs-on-6"
+kind = "compute"
+statement = "How many 2-regular simple graphs are there on the vertex set {1, 2, 3, 4, 5, 6}?"
+expected = "70"

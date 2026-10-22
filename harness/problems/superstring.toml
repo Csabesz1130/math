@@ -1,0 +1,16 @@
+# Paper-to-code: transcribe family 128's 2-approximation and verify it against exact optima.
+id = "shortest-common-superstring-2-approx"
+kind = "implement"
+families = ["128"]
+papers = ["128"]
+statement = """
+Implement the deterministic polynomial-time algorithm of the attached paper that returns a common
+superstring of length at most twice the optimum for every finite family of strings. The paper's
+guarantee is for its own algorithm, not for the classical greedy merge; transcribe the paper's
+algorithm.
+"""
+
+[implement]
+kit = "superstring"
+instances = 40
+seed = 0

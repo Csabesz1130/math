@@ -1,0 +1,20 @@
+# A constructive coding problem with a trusted checker: an answer is verified exactly.
+id = "psl2-length-28"
+kind = "construct"
+families = ["179"]
+statement = """
+Find a binary sequence s_0, ..., s_27 with entries +1 or -1 whose aperiodic autocorrelations
+C_k = sum_{j=0}^{27-k} s_j s_{j+k}, for k = 1, ..., 27, all satisfy |C_k| <= 2.
+"""
+context = """
+Barker sequences (every |C_k| <= 1) do not exist at length 28 (family 179), so 2 is the smallest
+peak sidelobe level possible. Such a code serves as a radar pulse-compression code or a
+frame-synchronisation word.
+"""
+
+[checker]
+file = "checkers/sidelobes.py"
+settings = """
+LENGTH = 28
+MAX_PSL = 2
+"""

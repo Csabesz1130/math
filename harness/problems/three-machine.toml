@@ -1,0 +1,16 @@
+# Paper-to-code: transcribe family 124's algorithm and verify it against an exact oracle.
+id = "three-machine-scheduling"
+kind = "implement"
+families = ["124"]
+papers = ["124"]
+statement = """
+Implement the deterministic polynomial-time algorithm of the attached paper that schedules
+unit-length jobs with arbitrary precedence constraints on three identical machines with minimum
+makespan. Follow the paper's construction; an implementation that is exponential in the number of
+jobs does not meet the goal even if it returns optimal schedules.
+"""
+
+[implement]
+kit = "three-machine"
+instances = 40
+seed = 0

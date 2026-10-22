@@ -1,0 +1,7 @@
+{
+  "note": "Hand-written scripted responses for offline demonstration of the harness. Not output of any model.",
+  "responses": [
+    "Concatenating all strings is always a common superstring.\n\n```python\ndef superstring(instance):\n    return ''.join(instance['strings'])\n```",
+    "This is the classical greedy merge, NOT a transcription of the paper's algorithm. It is included to show that differential testing can only make an implementation's correctness empirical: greedy's factor-2 guarantee is not established, yet it passes these instances.\n\n```python\ndef _overlap(a, b):\n    for k in range(min(len(a), len(b)) - 1, 0, -1):\n        if a.endswith(b[:k]):\n            return k\n    return 0\n\ndef _reduce(strings):\n    kept = []\n    for s in sorted(set(strings), key=lambda x: (-len(x), x)):\n        if not any(s in t for t in kept):\n            kept.append(s)\n    return kept\n\ndef superstring(instance):\n    strings = _reduce(instance[\"strings\"])\n    while len(strings) > 1:\n        k, i, j = max((_overlap(a, b), i, j) for i, a in enumerate(strings) for j, b in enumerate(strings) if i != j)\n        merged = strings[i] + strings[j][k:]\n        strings = _reduce([s for t, s in enumerate(strings) if t not in (i, j)] + [merged])\n    return strings[0] if strings else \"\"\n```"
+  ]
+}
